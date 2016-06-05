@@ -53,7 +53,7 @@ module.exports = ->
             if err?
                 done err
             else
-                if counter > user.hotpCounter
+                if delta >= 0
                     User.updateAttributes user._id,
                         encryptedOtpKey: key
                         hotpCounter: counter
